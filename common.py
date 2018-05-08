@@ -1,4 +1,5 @@
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
 
 arg = input("choose example\n")
@@ -29,5 +30,12 @@ if arg == "2":
   axs[0, 1].plot(data[0], data[1])
   axs[1, 1].hist2d(data[0], data[1])
 
-plt.style.use('ggplot')
+if arg == "3":
+  img = mpimg.imread(".\\data_files\\owls.png")
+  plt.colorbar()
+  lum_img = img[:, :, 0]
+  # plt.imshow(lum_img, cmap="hot")
+  plt.imshow(img, interpolation="bicubic")
+  # plt.hist(lum_img.ravel(), bins=256, range=(0.0, 1.0), fc='k', ec='k')
+
 plt.show()
