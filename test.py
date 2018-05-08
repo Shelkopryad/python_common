@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import re
 
-with open("C:\\Users\\user\\Desktop\\python\\plt.txt") as data_file:
+with open(".\\data_files\\plt.txt") as data_file:
     data = data_file.readlines()
 
 tmp = [x.lower() for x in data[0] if re.match("[a-zA-Z]", x)]
