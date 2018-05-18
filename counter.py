@@ -1,6 +1,9 @@
 words = input("Write:\n")
 
-tmp = [x.lower() for x in words.replace(",", "").split()]
+def replace(s):
+    return s.replace(".", "").replace(",", "").replace("!", "")
+
+tmp = [x.lower() for x in replace(words).split()]
 result = {}
 for x in tmp:
     if x not in result:
